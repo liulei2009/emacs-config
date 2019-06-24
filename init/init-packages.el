@@ -25,6 +25,7 @@
 			  reveal-in-osx-finder   ;;For apple mac-osx 
 			  expand-region
 			  iedit
+			  magit
 			  
 			  ) "Default Packages")
 
