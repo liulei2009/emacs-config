@@ -26,6 +26,10 @@
 			  expand-region
 			  iedit
 			  magit
+			  ecb
+			  auto-complete
+			  auto-complete-c-headers
+			  yasnippet
 			  
 			  ) "Default Packages")
 
@@ -82,6 +86,17 @@
 ;; To load at the start up
 ;; Only for osx user (Apple)
 (require 'reveal-in-osx-finder)
+
+
+;; ecb enable
+(require 'ecb)
+;;(require 'ecb-autoload-feature)
+
+;; auto-complete
+(require 'auto-complete)
+
+;; yasnippet
+(require 'yasnippet)
 
 ;;=================================
 (provide 'init-packages)

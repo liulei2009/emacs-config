@@ -12,4 +12,7 @@
 ;;recentf
 (setq recentf-max-menu-items 25)
 
+;; ecb ui
+(setq ecb-tip-of-the-day nil)
+
 (provide 'init-ui)
