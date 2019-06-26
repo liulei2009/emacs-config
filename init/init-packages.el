@@ -30,6 +30,8 @@
 			  auto-complete
 			  auto-complete-c-headers
 			  yasnippet
+			  ssh
+			  ssh-config-mode
 			  
 			  ) "Default Packages")
 

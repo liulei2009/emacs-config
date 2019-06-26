@@ -34,5 +34,8 @@
 ;; iedit
 (global-set-key (kbd "C-c e") 'iedit-mode)
 
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;;====================================================
 (provide 'init-keybind)
