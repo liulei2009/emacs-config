@@ -30,8 +30,9 @@
 			  auto-complete
 			  auto-complete-c-headers
 			  yasnippet
-			  ssh
-			  ssh-config-mode
+			  ggtags
+			  flymake-google-cpplint
+			  google-c-style
 			  
 			  ) "Default Packages")
 
@@ -89,16 +90,47 @@
 ;; Only for osx user (Apple)
 (require 'reveal-in-osx-finder)
 
-
 ;; ecb enable
 (require 'ecb)
 ;;(require 'ecb-autoload-feature)
 
 ;; auto-complete
 (require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
 
 ;; yasnippet
 (require 'yasnippet)
+(yas-global-mode 1)
+
+;; auto-complete-c-headers
+(defun my:ac-c-header-init()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'achead:include-directories '"/usr/include")
+  )
+
+(add-hook 'c-mode-hook 'my:ac-c-header-init)
+(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+
+;; ggtags
+(require 'ggtags)
+
+;; flymake-google-cpplint
+(defun my:flymake-google-cpplint-init ()
+  (require 'flymake-google-cpplint)
+  (custom-set-variables
+   '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
+  (flymake-google-cpplint-load)
+)
+
+(add-hook 'c-mode-hook 'my:flymake-google-cpplint-init)
+(add-hook 'c++-mode-hook 'my:flymake-google-cpplint-init)
+
+;; google-c-style
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;;=================================
 (provide 'init-packages)
